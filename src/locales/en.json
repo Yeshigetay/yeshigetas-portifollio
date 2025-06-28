@@ -1,0 +1,227 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "work": "Work",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "home": {
+    "greeting": "Hello, I'm",
+    "name": "Yeshigeta Ambachew",
+    "title": "Full Stack Developer",
+    "subtitle": "Passionate developer creating innovative digital solutions",
+    "description": "I'm a dedicated full-stack developer with 2 years of experience in creating modern web applications. I specialize in React, JavaScript, and Node.js, delivering high-quality solutions that exceed expectations.",
+    "cta": "Get In Touch",
+    "viewWork": "View My Work",
+    "stats": {
+      "projects": "Projects Completed",
+      "clients": "Happy Clients",
+      "experience": "Years Experience",
+      "awards": "Awards Won"
+    },
+    "skills": {
+      "title": "Skills & Technologies",
+      "description": "Technologies I work with"
+    },
+    "achievements": {
+      "title": "Achievements",
+      "description": "What I've accomplished"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Passionate developer with 2 years of experience creating innovative digital solutions",
+    "tabs": {
+      "skills": "Skills",
+      "experience": "Experience",
+      "education": "Education",
+      "personal": "Personal"
+    },
+    "skills": {
+      "react": "Modern UI development with hooks and context",
+      "javascript": "ES6+, async programming, DOM manipulation",
+      "htmlcss": "Semantic HTML, CSS Grid, Flexbox, animations",
+      "nodejs": "Backend development, Express.js, REST APIs",
+      "python": "Data science, automation, web scraping",
+      "uiux": "User research, prototyping, design systems"
+    },
+    "experience": {
+      "freelance": {
+        "title": "Frontend Developer",
+        "company": "Freelance",
+        "period": "2022-present",
+        "description": "Working independently on various web development projects, focusing on modern technologies and responsive design.",
+        "achievements": ["Completed 2+ projects", "Worked with 3+ clients", "Developed responsive websites"]
+      },
+      "digital": {
+        "title": "Full Stack Developer",
+        "company": "Digital Innovations",
+        "period": "2020 - 2022",
+        "description": "Developed and maintained multiple web applications using React, Node.js, and various databases.",
+        "achievements": ["Built 10+ web applications", "Reduced bugs by 60%", "Implemented CI/CD pipeline"]
+      },
+      "startup": {
+        "title": "Junior Developer",
+        "company": "StartUp Hub",
+        "period": "2018 - 2020",
+        "description": "Started my journey in web development, learning modern technologies and best practices.",
+        "achievements": ["Learned 5+ technologies", "Contributed to 20+ projects", "Earned 3 certifications"]
+      }
+    },
+    "education": {
+      "degree": "Degree of Computer Science",
+      "school": "Unity University",
+      "period": "2014-2018",
+      "description": "Specialized in Software Engineering and Web Technologies.",
+      "foundation": "Foundation in Computer Science with focus on programming and algorithms."
+    },
+    "personal": {
+      "name": "Name",
+      "age": "Age",
+      "location": "Location",
+      "experience": "Experience",
+      "freelance": "Freelance",
+      "languages": "Languages"
+    },
+    "cta": {
+      "title": "Ready to Work Together?",
+      "subtitle": "Let's create something amazing for your next project",
+      "getInTouch": "Get In Touch",
+      "viewPortfolio": "View Portfolio"
+    }
+  },
+  "work": {
+    "title": "Previous Work",
+    "subtitle": "Some of my recent projects and achievements",
+    "filter": {
+      "all": "All",
+      "web": "Web Apps",
+      "mobile": "Mobile Apps",
+      "design": "UI/UX Design"
+    },
+    "projects": {
+      "ecommerce": {
+        "title": "E-Commerce Platform",
+        "description": "A full-stack e-commerce solution with payment integration and admin dashboard",
+        "tech": "React, Node.js, MongoDB, Stripe"
+      },
+      "dashboard": {
+        "title": "Analytics Dashboard",
+        "description": "Real-time data visualization dashboard with interactive charts and reports",
+        "tech": "React, D3.js, Node.js, PostgreSQL"
+      },
+      "mobile": {
+        "title": "Mobile App",
+        "description": "Cross-platform mobile application with offline functionality",
+        "tech": "React Native, Firebase, Redux"
+      },
+      "portfolio": {
+        "title": "Portfolio Website",
+        "description": "Modern portfolio website with animations and responsive design",
+        "tech": "React, Framer Motion, CSS3"
+      },
+      "blog": {
+        "title": "Blog Platform",
+        "description": "Content management system with markdown support and SEO optimization",
+        "tech": "Next.js, Prisma, PostgreSQL"
+      },
+      "chat": {
+        "title": "Chat Application",
+        "description": "Real-time messaging app with file sharing and video calls",
+        "tech": "React, Socket.io, WebRTC"
+      }
+    },
+    "stats": {
+      "title": "Project Statistics",
+      "completed": "Projects Completed",
+      "ongoing": "Ongoing Projects",
+      "satisfaction": "Client Satisfaction"
+    }
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "What I can do for you",
+    "description": "I offer comprehensive web development services to help bring your ideas to life",
+    "services": {
+      "web": {
+        "title": "Web Development",
+        "description": "Custom websites and web applications built with modern technologies",
+        "features": ["Responsive Design", "SEO Optimization", "Performance", "Security"]
+      },
+      "mobile": {
+        "title": "Mobile Development",
+        "description": "Cross-platform mobile applications for iOS and Android",
+        "features": ["Native Performance", "Offline Support", "Push Notifications", "App Store Deployment"]
+      },
+      "uiux": {
+        "title": "UI/UX Design",
+        "description": "User-centered design solutions that enhance user experience",
+        "features": ["User Research", "Wireframing", "Prototyping", "User Testing"]
+      },
+      "consulting": {
+        "title": "Technical Consulting",
+        "description": "Expert advice on technology choices and project planning",
+        "features": ["Architecture Review", "Technology Stack", "Best Practices", "Code Review"]
+      }
+    },
+    "pricing": {
+      "title": "Pricing Plans",
+      "basic": {
+        "title": "Basic",
+        "price": "$500",
+        "description": "Perfect for small projects",
+        "features": ["Single Page Website", "Responsive Design", "Basic SEO", "1 Month Support"]
+      },
+      "standard": {
+        "title": "Standard",
+        "price": "$1,200",
+        "description": "Ideal for growing businesses",
+        "features": ["Multi-page Website", "CMS Integration", "Advanced SEO", "3 Months Support", "Performance Optimization"]
+      },
+      "premium": {
+        "title": "Premium",
+        "price": "$2,500",
+        "description": "For complex applications",
+        "features": ["Full-stack Application", "Database Design", "API Development", "6 Months Support", "Security Audit", "Performance Monitoring"]
+      }
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Let's discuss your project and create something amazing together",
+    "info": {
+      "title": "Contact Information",
+      "description": "Feel free to reach out through any of these channels. I'm always excited to hear about new projects and opportunities.",
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location"
+    },
+    "form": {
+      "title": "Send Me a Message",
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully! I'll get back to you soon.",
+      "error": "Something went wrong. Please try again."
+    },
+    "social": {
+      "title": "Follow Me"
+    },
+    "cta": {
+      "title": "Let's Work Together",
+      "description": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.",
+      "viewWork": "View My Work"
+    }
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "viewProject": "View Project",
+    "close": "Close",
+    "loading": "Loading...",
+    "language": "Language"
+  }
+} 

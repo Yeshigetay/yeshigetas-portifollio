@@ -1,0 +1,227 @@
+{
+  "nav": {
+    "home": "ዋና ገጽ",
+    "about": "ስለ እኔ",
+    "work": "ስራ",
+    "services": "አገልግሎቶች",
+    "contact": "አድራሻ"
+  },
+  "home": {
+    "greeting": "ሰላም፣ እኔ ነኝ",
+    "name": "የሺጌታ አምባቸው",
+    "title": "ፎል ስታክ ዴቨሎፐር",
+    "subtitle": "ዘመናዊ ዲጂታል መፍትሄዎችን የሚፈጥር ተነሳሽ ዴቨሎፐር",
+    "description": "ዘመናዊ ድህረ ገጽ መተግበሪያዎችን በመፍጠር ላይ የሚሰማራ የ2 ዓመት ስራ ልምድ ያለው ተሰጥኦ ያለው ፎል ስታክ ዴቨሎፐር ነኝ። በReact፣ JavaScript እና Node.js ላይ ያተኩራለሁ፣ የሚጠበቁትን ያለፈ ጥራት ያላቸው መፍትሄዎችን እሰጣለሁ።",
+    "cta": "አድራሻ ያግኙ",
+    "viewWork": "ስራዬን ይመልከቱ",
+    "stats": {
+      "projects": "የተጠናቀቁ ፕሮጀክቶች",
+      "clients": "ደስ ያሉ ደንበኞች",
+      "experience": "የስራ ልምድ ዓመታት",
+      "awards": "የተገኙ ሽልማቶች"
+    },
+    "skills": {
+      "title": "ክህሎቶች እና ቴክኖሎጂዎች",
+      "description": "የሚሰራበት ቴክኖሎጂዎች"
+    },
+    "achievements": {
+      "title": "የተገኙ ስኬቶች",
+      "description": "ያገኘሁት"
+    }
+  },
+  "about": {
+    "title": "ስለ እኔ",
+    "subtitle": "ዘመናዊ ዲጂታል መፍትሄዎችን በመፍጠር ላይ የሚሰማራ የ2 ዓመት ስራ ልምድ ያለው ተነሳሽ ዴቨሎፐር",
+    "tabs": {
+      "skills": "ክህሎቶች",
+      "experience": "ስራ ልምድ",
+      "education": "ትምህርት",
+      "personal": "ግል መረጃ"
+    },
+    "skills": {
+      "react": "ዘመናዊ UI ማሳደጊያ ከhooks እና context ጋር",
+      "javascript": "ES6+, async programming, DOM manipulation",
+      "htmlcss": "Semantic HTML, CSS Grid, Flexbox, animations",
+      "nodejs": "Backend development, Express.js, REST APIs",
+      "python": "Data science, automation, web scraping",
+      "uiux": "User research, prototyping, design systems"
+    },
+    "experience": {
+      "freelance": {
+        "title": "ፍሮንት ኢንድ ዴቨሎፐር",
+        "company": "ፍሪላንስ",
+        "period": "2022-አሁን",
+        "description": "በተለያዩ ድህረ ገጽ ማሳደጊያ ፕሮጀክቶች ላይ በግል እሰራለሁ፣ በዘመናዊ ቴክኖሎጂዎች እና responsive design ላይ ያተኩራለሁ።",
+        "achievements": ["2+ ፕሮጀክቶች ተጠናቅቀዋል", "3+ ደንበኞች ጋር ሰርቻለሁ", "Responsive websites አሳድራለሁ"]
+      },
+      "digital": {
+        "title": "ፎል ስታክ ዴቨሎፐር",
+        "company": "ዲጂታል ኢኖቬሽንስ",
+        "period": "2020 - 2022",
+        "description": "React፣ Node.js እና የተለያዩ databases በመጠቀም ብዙ ድህረ ገጽ መተግበሪያዎችን አሳድራለሁ እና እጠብቃለሁ።",
+        "achievements": ["10+ web applications አሳድራለሁ", "Bugs በ60% አሳልማለሁ", "CI/CD pipeline አተገብራለሁ"]
+      },
+      "startup": {
+        "title": "ጁኒየር ዴቨሎፐር",
+        "company": "ስታርት አፕ ሃብ",
+        "period": "2018 - 2020",
+        "description": "የድህረ ገጽ ማሳደጊያ ጉዞዬን ጀመርኩ፣ ዘመናዊ ቴክኖሎጂዎችን እና best practices እማራለሁ።",
+        "achievements": ["5+ ቴክኖሎጂዎች ተማራለሁ", "20+ ፕሮጀክቶች ላይ አስተዋጽያለሁ", "3 certifications አገኛለሁ"]
+      }
+    },
+    "education": {
+      "degree": "የኮምፒዩተር ሳይንስ ዲግሪ",
+      "school": "ዩኒቲ ዩኒቨርሲቲ",
+      "period": "2014-2018",
+      "description": "በሶፍትዌር ምህንድስና እና ድህረ ገጽ ቴክኖሎጂዎች ላይ ያተኩራለሁ።",
+      "foundation": "በኮምፒዩተር ሳይንስ ላይ መሰረት ከprogramming እና algorithms ጋር።"
+    },
+    "personal": {
+      "name": "ስም",
+      "age": "ዕድሜ",
+      "location": "አካባቢ",
+      "experience": "ስራ ልምድ",
+      "freelance": "ፍሪላንስ",
+      "languages": "ቋንቋዎች"
+    },
+    "cta": {
+      "title": "አብረን እንሰራ?",
+      "subtitle": "ለቀጣይ ፕሮጀክትዎ አስደናቂ ነገር እንፍጠር",
+      "getInTouch": "አድራሻ ያግኙ",
+      "viewPortfolio": "ፖርትፎሊዮ ይመልከቱ"
+    }
+  },
+  "work": {
+    "title": "የቀድሞ ስራዎች",
+    "subtitle": "ከየቅርቡ ፕሮጀክቶቼ እና የተገኙ ስኬቶች",
+    "filter": {
+      "all": "ሁሉም",
+      "web": "ድህረ ገጽ መተግበሪያዎች",
+      "mobile": "ሞባይል መተግበሪያዎች",
+      "design": "UI/UX ዲዛይን"
+    },
+    "projects": {
+      "ecommerce": {
+        "title": "E-Commerce መድረኳ",
+        "description": "የመክፈል አያያዝ እና የአስተዳደር ዳሽቦርድ ያለው ፎል ስታክ e-commerce መፍትሄ",
+        "tech": "React, Node.js, MongoDB, Stripe"
+      },
+      "dashboard": {
+        "title": "የትንተና ዳሽቦርድ",
+        "description": "ከinteractive charts እና reports ጋር የreal-time ዳታ ማሳያ ዳሽቦርድ",
+        "tech": "React, D3.js, Node.js, PostgreSQL"
+      },
+      "mobile": {
+        "title": "ሞባይል መተግበሪያ",
+        "description": "ከoffline functionality ጋር የcross-platform ሞባይል መተግበሪያ",
+        "tech": "React Native, Firebase, Redux"
+      },
+      "portfolio": {
+        "title": "ፖርትፎሊዮ ድህረ ገጽ",
+        "description": "ከanimations እና responsive design ጋር ዘመናዊ ፖርትፎሊዮ ድህረ ገጽ",
+        "tech": "React, Framer Motion, CSS3"
+      },
+      "blog": {
+        "title": "የብሎግ መድረኳ",
+        "description": "ከmarkdown support እና SEO optimization ጋር የይዘት አስተዳደር ስርዓት",
+        "tech": "Next.js, Prisma, PostgreSQL"
+      },
+      "chat": {
+        "title": "የመልእክት መተግበሪያ",
+        "description": "ከፋይል መጋራት እና የቪዲዮ ጥሪዎች ጋር real-time messaging app",
+        "tech": "React, Socket.io, WebRTC"
+      }
+    },
+    "stats": {
+      "title": "የፕሮጀክት ስታትስቲክስ",
+      "completed": "የተጠናቀቁ ፕሮጀክቶች",
+      "ongoing": "የሚቀጥሉ ፕሮጀክቶች",
+      "satisfaction": "የደንበኛ እርካማ"
+    }
+  },
+  "services": {
+    "title": "አገልግሎቶች",
+    "subtitle": "ለእርስዎ ምን ማድረግ እችላለሁ",
+    "description": "የእርስዎን ሃሳቦች ሕይወት ላይ ለማምጣት ለማገዝ ሁለገብ ድህረ ገጽ ማሳደጊያ አገልግሎቶችን እሰጣለሁ",
+    "services": {
+      "web": {
+        "title": "ድህረ ገጽ ማሳደጊያ",
+        "description": "በዘመናዊ ቴክኖሎጂዎች የተሰሩ ራስ ሰር ድህረ ገጾች እና ድህረ ገጽ መተግበሪያዎች",
+        "features": ["Responsive Design", "SEO Optimization", "Performance", "Security"]
+      },
+      "mobile": {
+        "title": "ሞባይል ማሳደጊያ",
+        "description": "ለiOS እና Android የcross-platform ሞባይል መተግበሪያዎች",
+        "features": ["Native Performance", "Offline Support", "Push Notifications", "App Store Deployment"]
+      },
+      "uiux": {
+        "title": "UI/UX ዲዛይን",
+        "description": "የተጠቃሚ ልምድ የሚያሻሽ የተጠቃሚ ማዕከል ዲዛይን መፍትሄዎች",
+        "features": ["User Research", "Wireframing", "Prototyping", "User Testing"]
+      },
+      "consulting": {
+        "title": "የቴክኒክ ምክር",
+        "description": "ስለ ቴክኖሎጂ ምርጫዎች እና የፕሮጀክት እቅድ ስለሚሰጥ ስፔሻሊስት ምክር",
+        "features": ["Architecture Review", "Technology Stack", "Best Practices", "Code Review"]
+      }
+    },
+    "pricing": {
+      "title": "የዋጋ እቅዶች",
+      "basic": {
+        "title": "መሰረታዊ",
+        "price": "$500",
+        "description": "ለትንሽ ፕሮጀክቶች ፍጹም",
+        "features": ["የአንድ ገጽ ድህረ ገጽ", "Responsive Design", "መሰረታዊ SEO", "1 ወር ድጋፍ"]
+      },
+      "standard": {
+        "title": "መደበኛ",
+        "price": "$1,200",
+        "description": "ለሚያድጉ ንግዶች ተስማሚ",
+        "features": ["የብዙ ገጽ ድህረ ገጽ", "CMS Integration", "የላቀ SEO", "3 ወራት ድጋፍ", "Performance Optimization"]
+      },
+      "premium": {
+        "title": "ፕሪሚየም",
+        "price": "$2,500",
+        "description": "ለውስብስብ መተግበሪያዎች",
+        "features": ["ፎል ስታክ መተግበሪያ", "Database Design", "API Development", "6 ወራት ድጋፍ", "Security Audit", "Performance Monitoring"]
+      }
+    }
+  },
+  "contact": {
+    "title": "አድራሻ ያግኙ",
+    "subtitle": "ፕሮጀክትዎን እንወያይ እና አስደናቂ ነገር እንፍጠር",
+    "info": {
+      "title": "የአድራሻ መረጃ",
+      "description": "በእነዚህ ቻናሎች ውስጥ አንዱን በመጠቀም አድራሻ ያግኙ። ስለ አዲስ ፕሮጀክቶች እና እድሎች ሁልጊዜ ተስማሚ ነኝ።",
+      "email": "ኢሜይል",
+      "phone": "ስልክ",
+      "location": "አካባቢ"
+    },
+    "form": {
+      "title": "መልእክት ላክልኝ",
+      "name": "ስም",
+      "email": "ኢሜይል",
+      "subject": "ርዕስ",
+      "message": "መልእክት",
+      "send": "መልእክት ላክ",
+      "sending": "ይላካል...",
+      "success": "መልእክቱ በተሳካተ ላከ! በቅርቡ እመለሳለሁ።",
+      "error": "የሆነ ነገር ተሳስቷል። እባክዎ እንደገና ይሞክሩ።"
+    },
+    "social": {
+      "title": "አስከተለኝ"
+    },
+    "cta": {
+      "title": "አብረን እንሰራ",
+      "description": "ስለ አዲስ ፕሮጀክቶች፣ ስለ ፈጠራ ሃሳቦች ወይም የእርስዎ ራዕዮች አካል ለመሆን ስለ እድሎች ሁልጊዜ ክፍት ነኝ።",
+      "viewWork": "ስራዬን ይመልከቱ"
+    }
+  },
+  "common": {
+    "learnMore": "ተጨማሪ ይወቁ",
+    "viewProject": "ፕሮጀክቱን ይመልከቱ",
+    "close": "ዝጋ",
+    "loading": "ይጫናል...",
+    "language": "ቋንቋ"
+  }
+} 
