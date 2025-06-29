@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { 
   FaTelegram, 
-  FaTiktok, 
   FaInstagram, 
   FaEnvelope, 
   FaArrowRight,
@@ -108,9 +107,6 @@ const Home = () => {
               <div className="social-links">
                 <a href="https://t.me/Moon2854" className="social-link" style={{"--hover-color": "#0088cc"}}>
                   <FaTelegram />
-                </a>
-                <a href="https://www.tiktok.com/@your_tiktok_username" className="social-link" style={{"--hover-color": "#000000"}}>
-                  <FaTiktok />
                 </a>
                 <a href="https://www.instagram.com/benjamingx54" className="social-link" style={{"--hover-color": "#e4405f"}}>
                   <FaInstagram />
