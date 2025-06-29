@@ -159,6 +159,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <motion.button
+          type="button"
           className="mobile-menu-button"
           onClick={toggleMenu}
           variants={itemVariants}
@@ -195,7 +196,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="mobile-menu"
+            className={`mobile-menu${isOpen ? ' open' : ''}`}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -235,7 +236,7 @@ const Navbar = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: navItems.length * 0.1 }}
               >
-                <LanguageSwitcher />
+                <LanguageSwitcher mobileToggle={true} />
               </motion.div>
             </div>
           </motion.div>

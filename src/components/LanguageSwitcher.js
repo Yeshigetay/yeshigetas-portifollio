@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaGlobe, FaChevronDown } from 'react-icons/fa';
 import './LanguageSwitcher.css';
 
-const LanguageSwitcher = () => {
+const LanguageSwitcher = ({ mobileToggle = false }) => {
   const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -14,6 +14,7 @@ const LanguageSwitcher = () => {
   ];
 
   const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0];
+  const nextLanguage = languages.find(lang => lang.code !== i18n.language) || languages[1];
 
   const handleLanguageChange = (languageCode) => {
     i18n.changeLanguage(languageCode);
@@ -24,6 +25,26 @@ const LanguageSwitcher = () => {
     setIsOpen(!isOpen);
   };
 
+  // Mobile toggle: just switch language on click
+  if (mobileToggle) {
+    return (
+      <div className="language-switcher">
+        <motion.button
+          className="language-button"
+          onClick={() => handleLanguageChange(nextLanguage.code)}
+          whileHover={{ scale: 1.05, boxShadow: "0 5px 15px rgba(0, 212, 255, 0.3)" }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <FaGlobe className="globe-icon" />
+          <span className="current-language">
+            {currentLanguage.flag} {currentLanguage.name}
+          </span>
+        </motion.button>
+      </div>
+    );
+  }
+
+  // Desktop: dropdown
   return (
     <div className="language-switcher">
       <motion.button
@@ -57,7 +78,7 @@ const LanguageSwitcher = () => {
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
           >
-            {languages.map((language) => (
+            {languages.map(language => (
               <motion.button
                 key={language.code}
                 className={`language-option ${i18n.language === language.code ? 'active' : ''}`}
