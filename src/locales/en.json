@@ -7,19 +7,55 @@
     "contact": "Contact"
   },
   "home": {
+    "hero": {
+      "greeting": "Hi, I'm",
+      "name": "Yeshigetay",
+      "im": "I'm a"
+    },
+    "typing": [
+      "Full Stack Developer",
+      "UI/UX Designer",
+      "Creative Problem Solver",
+      "Tech Enthusiast"
+    ],
+    "description": "Passionate about creating innovative digital solutions that make a difference. I combine creativity with technical expertise to build exceptional user experiences.",
+    "ctaWork": "View My Work",
+    "ctaContact": "Get In Touch",
+    "servicesTitle": "What I Do",
+    "services": [
+      {
+        "title": "Web Development",
+        "description": "Modern, responsive websites and web applications built with cutting-edge technologies."
+      },
+      {
+        "title": "UI/UX Design",
+        "description": "Beautiful, intuitive user interfaces that provide exceptional user experiences."
+      },
+      {
+        "title": "Mobile Development",
+        "description": "Cross-platform mobile applications that work seamlessly across all devices."
+      },
+      {
+        "title": "Performance Optimization",
+        "description": "Lightning-fast applications optimized for speed, efficiency, and user satisfaction."
+      }
+    ],
+    "stats": {
+      "projects": "Projects Completed",
+      "experience": "Years Experience",
+      "satisfaction": "Client Satisfaction"
+    },
+    "ctaSection": {
+      "title": "Ready to Start Your Project?",
+      "desc": "Let's work together to bring your ideas to life. I'm here to help you create something amazing.",
+      "button": "Let's Talk"
+    },
     "greeting": "Hello, I'm",
     "name": "Yeshigeta Ambachew",
     "title": "Full Stack Developer",
     "subtitle": "Passionate developer creating innovative digital solutions",
-    "description": "I'm a dedicated full-stack developer with 2 years of experience in creating modern web applications. I specialize in React, JavaScript, and Node.js, delivering high-quality solutions that exceed expectations.",
     "cta": "Get In Touch",
     "viewWork": "View My Work",
-    "stats": {
-      "projects": "Projects Completed",
-      "clients": "Happy Clients",
-      "experience": "Years Experience",
-      "awards": "Awards Won"
-    },
     "skills": {
       "title": "Skills & Technologies",
       "description": "Technologies I work with"

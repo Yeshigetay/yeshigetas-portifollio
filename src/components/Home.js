@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { 
   FaGithub, 
   FaLinkedin, 
@@ -18,13 +19,9 @@ import {
 import './Home.css';
 
 const Home = () => {
+  const { t, i18n } = useTranslation();
   const [currentText, setCurrentText] = useState(0);
-  const texts = [
-    "Full Stack Developer",
-    "UI/UX Designer", 
-    "Creative Problem Solver",
-    "Tech Enthusiast"
-  ];
+  const texts = t('home.typing', { returnObjects: true });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -56,34 +53,34 @@ const Home = () => {
   const services = [
     {
       icon: <FaCode />,
-      title: "Web Development",
-      description: "Modern, responsive websites and web applications built with cutting-edge technologies.",
+      title: t('home.services.0.title'),
+      description: t('home.services.0.description'),
       color: "#00d4ff"
     },
     {
       icon: <FaPalette />,
-      title: "UI/UX Design",
-      description: "Beautiful, intuitive user interfaces that provide exceptional user experiences.",
+      title: t('home.services.1.title'),
+      description: t('home.services.1.description'),
       color: "#ff6b6b"
     },
     {
       icon: <FaMobile />,
-      title: "Mobile Development",
-      description: "Cross-platform mobile applications that work seamlessly across all devices.",
+      title: t('home.services.2.title'),
+      description: t('home.services.2.description'),
       color: "#4ecdc4"
     },
     {
       icon: <FaRocket />,
-      title: "Performance Optimization",
-      description: "Lightning-fast applications optimized for speed, efficiency, and user satisfaction.",
+      title: t('home.services.3.title'),
+      description: t('home.services.3.description'),
       color: "#feca57"
     }
   ];
 
   const stats = [
-    { number: "50+", label: "Projects Completed", icon: <FaTrophy /> },
-    { number: "3+", label: "Years Experience", icon: <FaStar /> },
-    { number: "100%", label: "Client Satisfaction", icon: <FaUsers /> }
+    { number: "50+", label: t('home.stats.projects'), icon: <FaTrophy /> },
+    { number: "3+", label: t('home.stats.experience'), icon: <FaStar /> },
+    { number: "100%", label: t('home.stats.satisfaction'), icon: <FaUsers /> }
   ];
 
   return (
@@ -101,7 +98,7 @@ const Home = () => {
               <div className="profile-image-wrapper">
                 <img 
                   src="/images/Pro.jpg" 
-                  alt="Yeshigetay" 
+                  alt={t('home.hero.name')} 
                   className="profile-image"
                 />
                 <div className="profile-glow"></div>
@@ -128,29 +125,28 @@ const Home = () => {
           <div className="hero-right">
             <motion.div variants={itemVariants}>
               <h1 className="hero-title">
-                Hi, I'm <span className="highlight">Yeshigetay</span>
+                {t('home.hero.greeting')} <span className="highlight">{t('home.hero.name')}</span>
               </h1>
             </motion.div>
 
             <motion.div className="typing-container" variants={itemVariants}>
               <h2 className="typing-text">
-                I'm a <span className="typing-highlight">{texts[currentText]}</span>
+                {t('home.hero.im')} <span className="typing-highlight">{texts[currentText]}</span>
                 <span className="cursor">|</span>
               </h2>
             </motion.div>
 
             <motion.p className="hero-description" variants={itemVariants}>
-              Passionate about creating innovative digital solutions that make a difference. 
-              I combine creativity with technical expertise to build exceptional user experiences.
+              {t('home.description')}
             </motion.p>
 
             <motion.div className="cta-buttons" variants={itemVariants}>
               <Link to="/work" className="cta-button primary large">
-                View My Work
+                {t('home.ctaWork')}
                 <FaArrowRight className="cta-icon" />
               </Link>
               <Link to="/contact" className="cta-button secondary">
-                Get In Touch
+                {t('home.ctaContact')}
               </Link>
             </motion.div>
           </div>
@@ -166,7 +162,7 @@ const Home = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="section-title">What I Do</h2>
+          <h2 className="section-title">{t('home.servicesTitle')}</h2>
           <div className="services-grid">
             {services.map((service, index) => (
               <motion.div
@@ -229,10 +225,10 @@ const Home = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2>Ready to Start Your Project?</h2>
-          <p>Let's work together to bring your ideas to life. I'm here to help you create something amazing.</p>
+          <h2>{t('home.ctaSection.title')}</h2>
+          <p>{t('home.ctaSection.desc')}</p>
           <Link to="/contact" className="cta-button primary large">
-            Let's Talk
+            {t('home.ctaSection.button')}
             <FaArrowRight className="cta-icon" />
           </Link>
         </motion.div>
