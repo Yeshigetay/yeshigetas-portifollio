@@ -267,12 +267,14 @@ const Services = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <motion.h2 
-            className="section-title"
-            variants={itemVariants}
-          >
-            {t('services.pricing.title')}
-          </motion.h2>
+          <motion.div className="pricing-header" variants={itemVariants}>
+            <h2 className="section-title">
+              {t('services.pricing.title')}
+            </h2>
+            <p className="pricing-subtitle">
+              Choose the perfect plan for your project needs
+            </p>
+          </motion.div>
           
           <motion.div 
             className="pricing-grid"
@@ -284,61 +286,172 @@ const Services = () => {
                 className={`pricing-card ${plan.popular ? 'popular' : ''}`}
                 variants={cardVariants}
                 whileHover="hover"
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.2 }}
               >
+                {/* Popular Badge */}
                 {plan.popular && (
-                  <div className="popular-badge">
+                  <motion.div 
+                    className="popular-badge"
+                    initial={{ scale: 0, rotate: -180 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
+                  >
                     <FaStar />
-                    Most Popular
-                  </div>
+                    <span>Most Popular</span>
+                    <div className="badge-glow"></div>
+                  </motion.div>
                 )}
                 
-                <div className="pricing-header">
-                  <h3>{plan.title}</h3>
-                  <div className="pricing-price">
-                    <span className="price">{plan.price}</span>
+                {/* Card Header */}
+                <div className="pricing-header-content">
+                  <div className="plan-icon" style={{ backgroundColor: plan.color }}>
+                    {plan.id === 'basic' && <FaRocket />}
+                    {plan.id === 'standard' && <FaTrophy />}
+                    {plan.id === 'premium' && <FaStar />}
                   </div>
-                  <p className="pricing-description">{plan.description}</p>
+                  
+                  <h3 className="plan-title">{plan.title}</h3>
+                  
+                  <div className="pricing-display">
+                    <div className="price-container">
+                      <span className="currency">$</span>
+                      <span className="price-amount">
+                        {plan.price.replace('$', '')}
+                      </span>
+                      <span className="price-period">/project</span>
+                    </div>
+                    <div className="price-savings">
+                      {plan.id === 'standard' && <span>Save 20%</span>}
+                      {plan.id === 'premium' && <span>Best Value</span>}
+                    </div>
+                  </div>
+                  
+                  <p className="plan-description">{plan.description}</p>
                 </div>
                 
-                <ul className="pricing-features">
-                  {plan.features.map((feature, i) => (
-                    <li key={i}>
-                      <FaCheck className="feature-icon" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                {/* Features List */}
+                <div className="features-container">
+                  <h4 className="features-title">What's Included:</h4>
+                  <ul className="pricing-features">
+                    {plan.features.map((feature, i) => (
+                      <motion.li 
+                        key={i}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.8 + (i * 0.1) }}
+                        className="feature-item"
+                      >
+                        <div className="feature-icon">
+                          <FaCheck />
+                        </div>
+                        <span>{feature}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
                 
-                <motion.button
-                  className="pricing-button"
-                  whileHover={{ 
-                    scale: 1.05,
-                    y: -2,
-                    boxShadow: "0 15px 35px rgba(0, 212, 255, 0.4)"
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                  style={{ backgroundColor: plan.color }}
-                >
-                  <FaArrowRight />
-                  Get Started
-                </motion.button>
+                {/* Action Buttons */}
+                <div className="pricing-actions">
+                  <motion.button
+                    className={`pricing-button primary ${plan.popular ? 'popular' : ''}`}
+                    whileHover={{ 
+                      scale: 1.05,
+                      y: -3,
+                      boxShadow: `0 20px 40px ${plan.color}40`
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    style={{ 
+                      backgroundColor: plan.color,
+                      borderColor: plan.color
+                    }}
+                  >
+                    <span>Get Started</span>
+                    <FaArrowRight />
+                  </motion.button>
+                  
+                  <motion.button
+                    className="pricing-button secondary"
+                    whileHover={{ 
+                      scale: 1.02,
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                    }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <span>Learn More</span>
+                  </motion.button>
+                </div>
                 
+                {/* Additional Benefits */}
+                <div className="plan-benefits">
+                  {plan.id === 'basic' && (
+                    <div className="benefit-item">
+                      <FaRocket />
+                      <span>Perfect for startups</span>
+                    </div>
+                  )}
+                  {plan.id === 'standard' && (
+                    <div className="benefit-item">
+                      <FaTrophy />
+                      <span>Most popular choice</span>
+                    </div>
+                  )}
+                  {plan.id === 'premium' && (
+                    <div className="benefit-item">
+                      <FaStar />
+                      <span>Enterprise solution</span>
+                    </div>
+                  )}
+                </div>
+                
+                {/* Animated Glow Effects */}
                 <motion.div
-                  className="pricing-glow"
+                  className="pricing-glow primary"
                   style={{ backgroundColor: plan.color }}
                   animate={{
                     opacity: [0.3, 0.8, 0.3],
-                    scale: [1, 1.1, 1],
+                    scale: [1, 1.2, 1],
+                    rotate: [0, 180, 360],
                   }}
                   transition={{
-                    duration: 3,
+                    duration: 4,
                     repeat: Infinity,
-                    delay: index * 0.2,
+                    delay: index * 0.5,
+                  }}
+                />
+                <motion.div
+                  className="pricing-glow secondary"
+                  style={{ backgroundColor: plan.color }}
+                  animate={{
+                    opacity: [0.1, 0.4, 0.1],
+                    scale: [1.2, 1.5, 1.2],
+                    rotate: [360, 180, 0],
+                  }}
+                  transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    delay: index * 0.5 + 1,
                   }}
                 />
               </motion.div>
             ))}
+          </motion.div>
+          
+          {/* Pricing Footer */}
+          <motion.div 
+            className="pricing-footer"
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <div className="pricing-note">
+              <FaStar />
+              <p>All plans include free consultation and project planning</p>
+            </div>
+            <div className="pricing-guarantee">
+              <FaTrophy />
+              <p>100% satisfaction guarantee or your money back</p>
+            </div>
           </motion.div>
         </motion.section>
 
