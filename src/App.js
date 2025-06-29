@@ -32,6 +32,15 @@ function App() {
   return (
     <Router>
       <div className="App">
+        {/* Floating Particles Background */}
+        <div className="floating-particles">
+          <div className="floating-particle"></div>
+          <div className="floating-particle"></div>
+          <div className="floating-particle"></div>
+          <div className="floating-particle"></div>
+          <div className="floating-particle"></div>
+        </div>
+        
         <Navbar />
         <main className="main-content">
           <Routes>

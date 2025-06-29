@@ -1,248 +1,250 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FaArrowRight, FaGithub, FaLinkedin, FaInstagram, FaReact, FaNodeJs, FaPython, FaPalette, FaHtml5, FaJsSquare } from 'react-icons/fa';
-import { useTranslation } from 'react-i18next';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { 
+  FaGithub, 
+  FaLinkedin, 
+  FaTwitter, 
+  FaEnvelope, 
+  FaArrowRight,
+  FaCode,
+  FaPalette,
+  FaMobile,
+  FaRocket,
+  FaUsers,
+  FaTrophy,
+  FaStar
+} from 'react-icons/fa';
 import './Home.css';
 
-const skillsData = [
-  { name: 'React', icon: <FaReact />, color: '#00d4ff', level: 90 },
-  { name: 'Node.js', icon: <FaNodeJs />, color: '#4ecdc4', level: 80 },
-  { name: 'JavaScript', icon: <FaJsSquare />, color: '#f7df1e', level: 85 },
-  { name: 'HTML5', icon: <FaHtml5 />, color: '#e34f26', level: 95 },
-  { name: 'Python', icon: <FaPython />, color: '#3776ab', level: 75 },
-  { name: 'UI/UX', icon: <FaPalette />, color: '#ff6b6b', level: 85 },
-];
-
-const statsData = [
-  { label: 'Projects', value: '2+', color: '#00d4ff' },
-  { label: 'Clients', value: '3', color: '#ff6b6b' },
-  { label: 'Years', value: '2', color: '#4ecdc4' },
-  { label: 'Awards', value: '0+', color: '#feca57' },
-];
-
-const socialLinks = [
-  { icon: <FaGithub />, url: 'https://github.com', label: 'GitHub', color: '#333' },
-  { icon: <FaLinkedin />, url: 'https://linkedin.com', label: 'LinkedIn', color: '#0077b5' },
-  { icon: <FaInstagram />, url: 'https://instagram.com', label: 'Instagram', color: '#e4405f' },
-];
-
 const Home = () => {
-  const { t } = useTranslation();
-  const [mouse, setMouse] = useState({ x: 0, y: 0 });
-  const [activeSkill, setActiveSkill] = useState(0);
-  const heroRef = useRef(null);
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMouse({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  const [currentText, setCurrentText] = useState(0);
+  const texts = [
+    "Full Stack Developer",
+    "UI/UX Designer", 
+    "Creative Problem Solver",
+    "Tech Enthusiast"
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveSkill((prev) => (prev + 1) % skillsData.length);
-    }, 2500);
+      setCurrentText((prev) => (prev + 1) % texts.length);
+    }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [texts.length]);
 
-  // Animation variants
-  const heroVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1, type: 'spring' } },
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        staggerChildren: 0.2
+      }
+    }
   };
-  const statVariants = {
-    hidden: { opacity: 0, scale: 0.8, y: 40 },
-    visible: (i) => ({
-      opacity: 1, scale: 1, y: 0,
-      transition: { delay: 0.2 + i * 0.1, type: 'spring', stiffness: 200 },
-    }),
+
+  const itemVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
   };
-  const skillVariants = {
-    hidden: { opacity: 0, scale: 0.7 },
-    visible: (i) => ({
-      opacity: 1, scale: 1,
-      transition: { delay: 0.3 + i * 0.08, type: 'spring', stiffness: 200 },
-    }),
-  };
+
+  const services = [
+    {
+      icon: <FaCode />,
+      title: "Web Development",
+      description: "Modern, responsive websites and web applications built with cutting-edge technologies.",
+      color: "#00d4ff"
+    },
+    {
+      icon: <FaPalette />,
+      title: "UI/UX Design",
+      description: "Beautiful, intuitive user interfaces that provide exceptional user experiences.",
+      color: "#ff6b6b"
+    },
+    {
+      icon: <FaMobile />,
+      title: "Mobile Development",
+      description: "Cross-platform mobile applications that work seamlessly across all devices.",
+      color: "#4ecdc4"
+    },
+    {
+      icon: <FaRocket />,
+      title: "Performance Optimization",
+      description: "Lightning-fast applications optimized for speed, efficiency, and user satisfaction.",
+      color: "#feca57"
+    }
+  ];
+
+  const stats = [
+    { number: "50+", label: "Projects Completed", icon: <FaTrophy /> },
+    { number: "3+", label: "Years Experience", icon: <FaStar /> },
+    { number: "100%", label: "Client Satisfaction", icon: <FaUsers /> }
+  ];
 
   return (
-    <div className="home-advanced-container">
-      {/* Animated Gradient Background */}
-      <div className="home-gradient-bg" />
-      {/* Animated Floating Neon Shapes */}
-      <div className="home-floating-shapes">
-        {[...Array(8)].map((_, i) => (
-          <motion.div
-            key={i}
-            className={`floating-shape shape-${i % 4}`}
-            animate={{
-              x: [0, Math.sin(i) * 40],
-              y: [0, Math.cos(i) * 40],
-              rotate: [0, 360],
-              opacity: [0.7, 1, 0.7],
-            }}
-            transition={{
-              duration: 8 + i,
-              repeat: Infinity,
-              repeatType: 'mirror',
-              delay: i * 0.5,
-              ease: 'linear',
-            }}
-          />
-        ))}
-      </div>
-      {/* Animated Particle Layer */}
-      <div className="home-particles">
-        {[...Array(30)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="home-particle"
-            animate={{
-              x: [0, Math.random() * 100 - 50],
-              y: [0, Math.random() * 100 - 50],
-              opacity: [0, 1, 0],
-            }}
-            transition={{
-              duration: 6 + Math.random() * 4,
-              repeat: Infinity,
-              delay: Math.random() * 3,
-            }}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-          />
-        ))}
-      </div>
-      {/* Mouse Follower Glow */}
-      <motion.div
-        className="home-mouse-follower"
-        animate={{
-          x: mouse.x - 60,
-          y: mouse.y - 60,
-        }}
-        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-      />
+    <div className="home-container">
       {/* Hero Section */}
-      <motion.section
-        className="home-hero-advanced"
-        ref={heroRef}
-        variants={heroVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <motion.div className="home-hero-profile" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2, type: 'spring' }}>
-          <div className="home-hero-img-glow">
-            <img src="/images/Pro.jpg" alt="Yeshigeta Ambachew" className="home-hero-img" />
-            <motion.div
-              className="home-hero-img-ring"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
-            />
-          </div>
-          <div className="home-hero-social-orbs">
-            {socialLinks.map((social, i) => (
-              <motion.a
-                key={i}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="home-social-orb"
-                style={{ '--orb-color': social.color }}
-                whileHover={{ scale: 1.2, boxShadow: `0 0 30px ${social.color}` }}
-                transition={{ type: 'spring', stiffness: 400, damping: 15 }}
-              >
-                {social.icon}
-                <span className="home-social-tooltip">{social.label}</span>
-              </motion.a>
-            ))}
-          </div>
-        </motion.div>
-        <motion.div className="home-hero-text" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, type: 'spring' }}>
-          <h1 className="home-hero-title">
-            <span className="home-hero-greeting">{t('home.greeting')}</span>
-            <span className="home-hero-name-gradient">{t('home.name')}</span>
-          </h1>
-          <motion.div className="home-hero-dynamic-title" animate={{ opacity: [0.7, 1, 0.7] }} transition={{ duration: 2, repeat: Infinity }}>
-            {t('home.title')}
-          </motion.div>
-          <p className="home-hero-desc">{t('home.description')}</p>
-          <div className="home-hero-cta-btns">
-            <motion.a
-              href="/contact"
-              className="home-hero-cta primary"
-              whileHover={{ scale: 1.08, boxShadow: '0 0 30px #00d4ff' }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <FaArrowRight /> {t('home.cta')}
-            </motion.a>
-            <motion.a
-              href="/work"
-              className="home-hero-cta secondary"
-              whileHover={{ scale: 1.08, boxShadow: '0 0 30px #fff' }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {t('home.viewWork')}
-            </motion.a>
-          </div>
-        </motion.div>
-      </motion.section>
-      {/* Stats Section */}
-      <motion.section className="home-advanced-stats" initial="hidden" whileInView="visible" viewport={{ once: true }}>
-        <motion.div className="home-advanced-stats-grid">
-          {statsData.map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              className="home-advanced-stat-card"
-              custom={i}
-              variants={statVariants}
-              initial="hidden"
-              animate="visible"
-              whileHover={{ scale: 1.08, boxShadow: `0 0 30px ${stat.color}` }}
-            >
-              <div className="home-advanced-stat-value" style={{ color: stat.color }}>{stat.value}</div>
-              <div className="home-advanced-stat-label">{stat.label}</div>
+      <section className="hero-section">
+        <motion.div 
+          className="hero-content"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <div className="hero-left">
+            <motion.div className="profile-card" variants={itemVariants}>
+              <div className="profile-image-wrapper">
+                <img 
+                  src="/images/Pro.jpg" 
+                  alt="Yeshigetay" 
+                  className="profile-image"
+                />
+                <div className="profile-glow"></div>
+                <div className="profile-ring"></div>
+              </div>
+              
+              <div className="social-links">
+                <a href="https://github.com/Yeshigetay" className="social-link" style={{"--hover-color": "#333"}}>
+                  <FaGithub />
+                </a>
+                <a href="https://linkedin.com/in/yeshigetay" className="social-link" style={{"--hover-color": "#0077b5"}}>
+                  <FaLinkedin />
+                </a>
+                <a href="https://twitter.com/yeshigetay" className="social-link" style={{"--hover-color": "#1da1f2"}}>
+                  <FaTwitter />
+                </a>
+                <a href="mailto:rashambachew@gmail.com" className="social-link" style={{"--hover-color": "#ea4335"}}>
+                  <FaEnvelope />
+                </a>
+              </div>
             </motion.div>
-          ))}
+          </div>
+
+          <div className="hero-right">
+            <motion.div variants={itemVariants}>
+              <h1 className="hero-title">
+                Hi, I'm <span className="highlight">Yeshigetay</span>
+              </h1>
+            </motion.div>
+
+            <motion.div className="typing-container" variants={itemVariants}>
+              <h2 className="typing-text">
+                I'm a <span className="typing-highlight">{texts[currentText]}</span>
+                <span className="cursor">|</span>
+              </h2>
+            </motion.div>
+
+            <motion.p className="hero-description" variants={itemVariants}>
+              Passionate about creating innovative digital solutions that make a difference. 
+              I combine creativity with technical expertise to build exceptional user experiences.
+            </motion.p>
+
+            <motion.div className="cta-buttons" variants={itemVariants}>
+              <Link to="/work" className="cta-button primary large">
+                View My Work
+                <FaArrowRight className="cta-icon" />
+              </Link>
+              <Link to="/contact" className="cta-button secondary">
+                Get In Touch
+              </Link>
+            </motion.div>
+          </div>
         </motion.div>
-      </motion.section>
-      {/* Skills Carousel/Ring */}
-      <motion.section className="home-advanced-skills" initial="hidden" whileInView="visible" viewport={{ once: true }}>
-        <h2 className="home-advanced-section-title">{t('home.skills.title')}</h2>
-        <div className="home-advanced-skills-carousel">
-          <AnimatePresence initial={false}>
-            {skillsData.map((skill, i) => (
+      </section>
+
+      {/* Services Section */}
+      <section className="services-section">
+        <motion.div 
+          className="services-content"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="section-title">What I Do</h2>
+          <div className="services-grid">
+            {services.map((service, index) => (
               <motion.div
-                key={skill.name}
-                className={`home-advanced-skill-card${activeSkill === i ? ' active' : ''}`}
-                custom={i}
-                variants={skillVariants}
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
-                whileHover={{ scale: 1.12, boxShadow: `0 0 30px ${skill.color}` }}
-                style={{ borderColor: skill.color, zIndex: activeSkill === i ? 2 : 1 }}
+                key={index}
+                className="service-card"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -10, scale: 1.02 }}
               >
-                <div className="home-advanced-skill-icon" style={{ color: skill.color }}>{skill.icon}</div>
-                <div className="home-advanced-skill-info">
-                  <h3>{skill.name}</h3>
-                  <div className="home-advanced-skill-bar">
-                    <motion.div
-                      className="home-advanced-skill-progress"
-                      initial={{ width: 0 }}
-                      animate={{ width: activeSkill === i ? `${skill.level}%` : 0 }}
-                      transition={{ duration: 1.5, delay: 0.2 }}
-                      style={{ background: skill.color }}
-                    />
-                  </div>
+                <div className="service-icon" style={{ color: service.color }}>
+                  {service.icon}
                 </div>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+                <div className="service-glow" style={{ background: `radial-gradient(circle, ${service.color}20, transparent)` }}></div>
               </motion.div>
             ))}
-          </AnimatePresence>
-        </div>
-      </motion.section>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="stats-section">
+        <motion.div 
+          className="stats-content"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="stats-grid">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                className="stat-card"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="stat-icon">{stat.icon}</div>
+                <div className="stat-number">{stat.number}</div>
+                <div className="stat-label">{stat.label}</div>
+                <div className="stat-glow"></div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="contact-cta">
+        <motion.div 
+          className="cta-content"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2>Ready to Start Your Project?</h2>
+          <p>Let's work together to bring your ideas to life. I'm here to help you create something amazing.</p>
+          <Link to="/contact" className="cta-button primary large">
+            Let's Talk
+            <FaArrowRight className="cta-icon" />
+          </Link>
+        </motion.div>
+      </section>
+
+      {/* Navigation Dots */}
+      <div className="nav-dots">
+        <div className="nav-dot active"></div>
+        <div className="nav-dot"></div>
+        <div className="nav-dot"></div>
+        <div className="nav-dot"></div>
+      </div>
     </div>
   );
 };
