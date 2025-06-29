@@ -67,12 +67,12 @@
   },
   "about": {
     "title": "ስለ እኔ",
-    "subtitle": "ዘመናዊ ዲጂታል መፍትሄዎችን በመፍጠር ላይ የሚሰማራ የ2 ዓመት ስራ ልምድ ያለው ተነሳሽ ዴቨሎፐር",
+    "subtitle": "በራሴ የተማርኩ ዴቨሎፐር፣ 1 ዓመት ልምድ በየተገኙ የግል ፕሮጀክቶች.",
     "tabs": {
       "skills": "ክህሎቶች",
-      "experience": "ስራ ልምድ",
+      "experience": "ልምድ",
       "education": "ትምህርት",
-      "personal": "ግል መረጃ"
+      "personal": "የግል"
     },
     "skills": {
       "react": "ዘመናዊ UI ማሳደጊያ ከhooks እና context ጋር",
@@ -83,26 +83,12 @@
       "uiux": "User research, prototyping, design systems"
     },
     "experience": {
-      "freelance": {
-        "title": "ፍሮንት ኢንድ ዴቨሎፐር",
-        "company": "ፍሪላንስ",
-        "period": "2022-አሁን",
-        "description": "በተለያዩ ድህረ ገጽ ማሳደጊያ ፕሮጀክቶች ላይ በግል እሰራለሁ፣ በዘመናዊ ቴክኖሎጂዎች እና responsive design ላይ ያተኩራለሁ።",
-        "achievements": ["2+ ፕሮጀክቶች ተጠናቅቀዋል", "3+ ደንበኞች ጋር ሰርቻለሁ", "Responsive websites አሳድራለሁ"]
-      },
-      "digital": {
-        "title": "ፎል ስታክ ዴቨሎፐር",
-        "company": "ዲጂታል ኢኖቬሽንስ",
-        "period": "2020 - 2022",
-        "description": "React፣ Node.js እና የተለያዩ databases በመጠቀም ብዙ ድህረ ገጽ መተግበሪያዎችን አሳድራለሁ እና እጠብቃለሁ።",
-        "achievements": ["10+ web applications አሳድራለሁ", "Bugs በ60% አሳልማለሁ", "CI/CD pipeline አተገብራለሁ"]
-      },
-      "startup": {
-        "title": "ጁኒየር ዴቨሎፐር",
-        "company": "ስታርት አፕ ሃብ",
-        "period": "2018 - 2020",
-        "description": "የድህረ ገጽ ማሳደጊያ ጉዞዬን ጀመርኩ፣ ዘመናዊ ቴክኖሎጂዎችን እና best practices እማራለሁ።",
-        "achievements": ["5+ ቴክኖሎጂዎች ተማራለሁ", "20+ ፕሮጀክቶች ላይ አስተዋጽያለሁ", "3 certifications አገኛለሁ"]
+      "personal": {
+        "title": "የግል ፕሮጀክቶች",
+        "company": "",
+        "period": "2023 - አሁን",
+        "description": "ብዙ የግል ፕሮጀክቶችን በራሴ ስራ ላይ አውልቻለሁ፣ ዘመናዊ ድህረ ገጾችን በመገንባት እና ክህሎቶቼን በቀጣይነት እያሻሻልኩ ነው።",
+        "achievements": ["ብዙ የግል ፕሮጀክቶችን አጠናቅቻለሁ", "ዘመናዊ ቴክኖሎጂዎችን በራሴ ተማርኩ", "ጠንካራ ፖርትፎሊዮ ሠርቻለሁ"]
       }
     },
     "education": {
@@ -114,9 +100,9 @@
     },
     "personal": {
       "name": "ስም",
-      "age": "ዕድሜ",
+      "age": "እድሜ",
       "location": "አካባቢ",
-      "experience": "ስራ ልምድ",
+      "experience": "ልምድ",
       "freelance": "ፍሪላንስ",
       "languages": "ቋንቋዎች"
     },

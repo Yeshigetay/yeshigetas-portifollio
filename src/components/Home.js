@@ -76,12 +76,6 @@ const Home = () => {
     }
   ];
 
-  const stats = [
-    { number: "50+", label: t('home.stats.projects'), icon: <FaTrophy /> },
-    { number: "3+", label: t('home.stats.experience'), icon: <FaStar /> },
-    { number: "100%", label: t('home.stats.satisfaction'), icon: <FaUsers /> }
-  ];
-
   return (
     <div className="home-container">
       {/* Hero Section */}
@@ -176,36 +170,6 @@ const Home = () => {
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
                 <div className="service-glow" style={{ background: `radial-gradient(circle, ${service.color}20, transparent)` }}></div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="stats-section">
-        <motion.div 
-          className="stats-content"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="stats-grid">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                className="stat-card"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <div className="stat-icon">{stat.icon}</div>
-                <div className="stat-number">{stat.number}</div>
-                <div className="stat-label">{stat.label}</div>
-                <div className="stat-glow"></div>
               </motion.div>
             ))}
           </div>

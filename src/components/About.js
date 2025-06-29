@@ -22,38 +22,18 @@ const About = () => {
     { name: 'React', level: 90, color: '#00d4ff', icon: '⚛️', description: t('about.skills.react') },
     { name: 'JavaScript', level: 85, color: '#f7df1e', icon: '⚡', description: t('about.skills.javascript') },
     { name: 'HTML/CSS', level: 95, color: '#e34f26', icon: '🎨', description: t('about.skills.htmlcss') },
-    { name: 'Node.js', level: 80, color: '#339933', icon: '🟢', description: t('about.skills.nodejs') },
-    { name: 'Python', level: 75, color: '#3776ab', icon: '🐍', description: t('about.skills.python') },
     { name: 'UI/UX Design', level: 85, color: '#ff6b6b', icon: '✨', description: t('about.skills.uiux') }
   ];
 
   const experiences = [
     {
-      title: t('about.experience.freelance.title'),
-      company: t('about.experience.freelance.company'),
-      period: t('about.experience.freelance.period'),
-      description: t('about.experience.freelance.description'),
-      achievements: t('about.experience.freelance.achievements', { returnObjects: true }),
+      title: 'Personal Projects',
+      company: '',
+      period: '2023 - Present',
+      description: 'I have worked on several personal projects, building modern web applications and continuously improving my skills.',
+      achievements: ['Completed multiple solo projects', 'Self-taught modern web technologies', 'Built a strong portfolio'],
       icon: FaStar,
       color: '#00d4ff'
-    },
-    {
-      title: t('about.experience.digital.title'),
-      company: t('about.experience.digital.company'),
-      period: t('about.experience.digital.period'),
-      description: t('about.experience.digital.description'),
-      achievements: t('about.experience.digital.achievements', { returnObjects: true }),
-      icon: FaTrophy,
-      color: '#ff6b6b'
-    },
-    {
-      title: t('about.experience.startup.title'),
-      company: t('about.experience.startup.company'),
-      period: t('about.experience.startup.period'),
-      description: t('about.experience.startup.description'),
-      achievements: t('about.experience.startup.achievements', { returnObjects: true }),
-      icon: FaMedal,
-      color: '#4ecdc4'
     }
   ];
 
@@ -67,31 +47,21 @@ const About = () => {
       icon: FaGraduationCap,
       color: '#feca57'
     },
-    {
-      degree: t('about.education.degree'),
-      school: t('about.education.school'),
-      period: t('about.education.period'),
-      description: t('about.education.foundation'),
-      gpa: '3.3/4.0',
-      icon: FaAward,
-      color: '#9c88ff'
-    }
+  
   ];
 
   const personalInfo = [
     { label: t('about.personal.name'), value: t('home.name'), icon: FaHeart, color: '#ff6b6b' },
     { label: t('about.personal.age'), value: '22 years', icon: FaAward, color: '#feca57' },
     { label: t('about.personal.location'), value: 'Addis Ababa, Ethiopia', icon: FaGlobe, color: '#4ecdc4' },
-    { label: t('about.personal.experience'), value: '2 years', icon: FaBriefcase, color: '#667eea' },
-    { label: t('about.personal.freelance'), value: 'Available', icon: FaUsers, color: '#a55eea' },
+    { label: t('about.personal.experience'), value: '1 year', icon: FaBriefcase, color: '#667eea' },
+    { label: t('about.personal.freelance'), value: 'Not applicable', icon: FaUsers, color: '#a55eea' },
     { label: t('about.personal.languages'), value: 'English, Amharic', icon: FaLightbulb, color: '#ff9ff3' }
   ];
 
   const stats = [
-    { number: '2+', label: t('home.stats.projects'), icon: FaCode, color: '#00d4ff' },
-    { number: '3', label: t('home.stats.clients'), icon: FaPalette, color: '#ff6b6b' },
-    { number: '2', label: t('home.stats.experience'), icon: FaRocket, color: '#4ecdc4' },
-    { number: '0+', label: t('home.stats.awards'), icon: FaAward, color: '#feca57' }
+    { number: '5+', label: 'Personal Projects', icon: FaCode, color: '#00d4ff' },
+    { number: '1', label: 'Year Experience', icon: FaRocket, color: '#4ecdc4' }
   ];
 
   const tabs = [

@@ -53,36 +53,6 @@ const Services = () => {
     }
   ];
 
-  const pricingPlans = [
-    {
-      id: 'basic',
-      title: t('services.pricing.basic.title'),
-      price: t('services.pricing.basic.price'),
-      description: t('services.pricing.basic.description'),
-      features: t('services.pricing.basic.features', { returnObjects: true }),
-      color: '#00d4ff',
-      popular: false
-    },
-    {
-      id: 'standard',
-      title: t('services.pricing.standard.title'),
-      price: t('services.pricing.standard.price'),
-      description: t('services.pricing.standard.description'),
-      features: t('services.pricing.standard.features', { returnObjects: true }),
-      color: '#ff6b6b',
-      popular: true
-    },
-    {
-      id: 'premium',
-      title: t('services.pricing.premium.title'),
-      price: t('services.pricing.premium.price'),
-      description: t('services.pricing.premium.description'),
-      features: t('services.pricing.premium.features', { returnObjects: true }),
-      color: '#4ecdc4',
-      popular: false
-    }
-  ];
-
   const achievements = [
     { icon: FaStar, title: 'Project Excellence', description: 'Delivered high-quality solutions' },
     { icon: FaTrophy, title: 'Client Satisfaction', description: '100% client satisfaction rate' },
@@ -259,247 +229,68 @@ const Services = () => {
           </motion.div>
         </motion.section>
 
-        {/* Pricing Section */}
-        <motion.section 
-          className="pricing-section"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <motion.div className="pricing-header" variants={itemVariants}>
-            <h2 className="section-title">
-              {t('services.pricing.title')}
-            </h2>
-            <p className="pricing-subtitle">
-              Choose the perfect plan for your project needs
-            </p>
-          </motion.div>
-          
-          <motion.div 
-            className="pricing-grid"
-            variants={containerVariants}
-          >
-            {pricingPlans.map((plan, index) => (
-              <motion.div
-                key={plan.id}
-                className={`pricing-card ${plan.popular ? 'popular' : ''}`}
-                variants={cardVariants}
-                whileHover="hover"
-                transition={{ delay: index * 0.2 }}
-              >
-                {/* Popular Badge */}
-                {plan.popular && (
-                  <motion.div 
-                    className="popular-badge"
-                    initial={{ scale: 0, rotate: -180 }}
-                    animate={{ scale: 1, rotate: 0 }}
-                    transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
-                  >
-                    <FaStar />
-                    <span>Most Popular</span>
-                    <div className="badge-glow"></div>
-                  </motion.div>
-                )}
-                
-                {/* Card Header */}
-                <div className="pricing-header-content">
-                  <div className="plan-icon" style={{ backgroundColor: plan.color }}>
-                    {plan.id === 'basic' && <FaRocket />}
-                    {plan.id === 'standard' && <FaTrophy />}
-                    {plan.id === 'premium' && <FaStar />}
-                  </div>
-                  
-                  <h3 className="plan-title">{plan.title}</h3>
-                  
-                  <div className="pricing-display">
-                    <div className="price-container">
-                      <span className="currency">$</span>
-                      <span className="price-amount">
-                        {plan.price.replace('$', '')}
-                      </span>
-                      <span className="price-period">/project</span>
-                    </div>
-                    <div className="price-savings">
-                      {plan.id === 'standard' && <span>Save 20%</span>}
-                      {plan.id === 'premium' && <span>Best Value</span>}
-                    </div>
-                  </div>
-                  
-                  <p className="plan-description">{plan.description}</p>
-                </div>
-                
-                {/* Features List */}
-                <div className="features-container">
-                  <h4 className="features-title">What's Included:</h4>
-                  <ul className="pricing-features">
-                    {plan.features.map((feature, i) => (
-                      <motion.li 
-                        key={i}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.8 + (i * 0.1) }}
-                        className="feature-item"
-                      >
-                        <div className="feature-icon">
-                          <FaCheck />
-                        </div>
-                        <span>{feature}</span>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </div>
-                
-                {/* Action Buttons */}
-                <div className="pricing-actions">
-                  <motion.button
-                    className={`pricing-button primary ${plan.popular ? 'popular' : ''}`}
-                    whileHover={{ 
-                      scale: 1.05,
-                      y: -3,
-                      boxShadow: `0 20px 40px ${plan.color}40`
-                    }}
-                    whileTap={{ scale: 0.95 }}
-                    style={{ 
-                      backgroundColor: plan.color,
-                      borderColor: plan.color
-                    }}
-                  >
-                    <span>Get Started</span>
-                    <FaArrowRight />
-                  </motion.button>
-                  
-                  <motion.button
-                    className="pricing-button secondary"
-                    whileHover={{ 
-                      scale: 1.02,
-                      backgroundColor: 'rgba(255, 255, 255, 0.1)'
-                    }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <span>Learn More</span>
-                  </motion.button>
-                </div>
-                
-                {/* Additional Benefits */}
-                <div className="plan-benefits">
-                  {plan.id === 'basic' && (
-                    <div className="benefit-item">
-                      <FaRocket />
-                      <span>Perfect for startups</span>
-                    </div>
-                  )}
-                  {plan.id === 'standard' && (
-                    <div className="benefit-item">
-                      <FaTrophy />
-                      <span>Most popular choice</span>
-                    </div>
-                  )}
-                  {plan.id === 'premium' && (
-                    <div className="benefit-item">
-                      <FaStar />
-                      <span>Enterprise solution</span>
-                    </div>
-                  )}
-                </div>
-                
-                {/* Animated Glow Effects */}
-                <motion.div
-                  className="pricing-glow primary"
-                  style={{ backgroundColor: plan.color }}
-                  animate={{
-                    opacity: [0.3, 0.8, 0.3],
-                    scale: [1, 1.2, 1],
-                    rotate: [0, 180, 360],
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    delay: index * 0.5,
-                  }}
-                />
-                <motion.div
-                  className="pricing-glow secondary"
-                  style={{ backgroundColor: plan.color }}
-                  animate={{
-                    opacity: [0.1, 0.4, 0.1],
-                    scale: [1.2, 1.5, 1.2],
-                    rotate: [360, 180, 0],
-                  }}
-                  transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    delay: index * 0.5 + 1,
-                  }}
-                />
-              </motion.div>
-            ))}
-          </motion.div>
-          
-          {/* Pricing Footer */}
-          <motion.div 
-            className="pricing-footer"
-            variants={itemVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <div className="pricing-note">
-              <FaStar />
-              <p>All plans include free consultation and project planning</p>
-            </div>
-            <div className="pricing-guarantee">
-              <FaTrophy />
-              <p>100% satisfaction guarantee or your money back</p>
-            </div>
-          </motion.div>
-        </motion.section>
-
         {/* Achievements Section */}
         <motion.section 
-          className="achievements-section"
+          className="achievements-section advanced"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
+          <motion.div className="achievements-header" variants={itemVariants}>
+            <h2 className="achievements-title">Achievements</h2>
+            <p className="achievements-subtitle">A few highlights from my journey</p>
+          </motion.div>
           <motion.div 
-            className="achievements-grid"
+            className="achievements-grid advanced"
             variants={containerVariants}
           >
             {achievements.map((achievement, index) => (
               <motion.div
                 key={index}
-                className="achievement-card"
+                className="achievement-card advanced"
                 variants={cardVariants}
                 whileHover="hover"
                 transition={{ delay: index * 0.2 }}
               >
                 <motion.div 
-                  className="achievement-icon"
+                  className="achievement-icon advanced"
                   animate={{
                     rotate: [0, 360],
+                    scale: [1, 1.15, 1],
+                    boxShadow: [
+                      '0 0 30px #00d4ff55',
+                      '0 0 60px #ff6b6b55',
+                      '0 0 30px #00d4ff55'
+                    ]
                   }}
                   transition={{
                     duration: 4,
                     repeat: Infinity,
                     delay: index * 0.5,
                   }}
+                  style={{
+                    background: index === 0 ? 'linear-gradient(135deg, #00d4ff 60%, #fff 100%)' : index === 1 ? 'linear-gradient(135deg, #ff6b6b 60%, #fff 100%)' : 'linear-gradient(135deg, #feca57 60%, #fff 100%)',
+                    color: 'white',
+                  }}
                 >
                   <achievement.icon />
                 </motion.div>
-                <h3>{achievement.title}</h3>
-                <p>{achievement.description}</p>
+                <h3 className="achievement-title">{achievement.title}</h3>
+                <p className="achievement-description">{achievement.description}</p>
                 <motion.div
-                  className="achievement-glow"
+                  className="achievement-glow advanced"
                   animate={{
                     opacity: [0.3, 0.8, 0.3],
-                    scale: [1, 1.1, 1],
+                    scale: [1, 1.2, 1],
                   }}
                   transition={{
                     duration: 3,
                     repeat: Infinity,
                     delay: index * 0.3,
+                  }}
+                  style={{
+                    background: index === 0 ? '#00d4ff' : index === 1 ? '#ff6b6b' : '#feca57',
                   }}
                 />
               </motion.div>
