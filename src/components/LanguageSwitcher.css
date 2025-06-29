@@ -1,6 +1,6 @@
 .language-switcher {
   position: relative;
-  z-index: 1000;
+  z-index: 2001;
 }
 
 .language-button {
@@ -74,8 +74,9 @@
   border-radius: 15px;
   backdrop-filter: blur(20px);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
+  overflow: visible;
   min-width: 150px;
+  z-index: 3000;
 }
 
 .language-option {
@@ -181,5 +182,19 @@
   
   .language-flag {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .mobile-menu-content {
+    overflow: visible !important;
+    position: relative;
+    z-index: 2000;
+  }
+  .language-switcher {
+    z-index: 3001;
+  }
+  .language-dropdown {
+    z-index: 4000;
   }
 } 
