@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { 
-  FaGithub, 
-  FaLinkedin, 
-  FaTwitter, 
+  FaTelegram, 
+  FaTiktok, 
+  FaInstagram, 
   FaEnvelope, 
   FaArrowRight,
   FaCode,
@@ -106,14 +106,14 @@ const Home = () => {
               </div>
               
               <div className="social-links">
-                <a href="https://github.com/Yeshigetay" className="social-link" style={{"--hover-color": "#333"}}>
-                  <FaGithub />
+                <a href="https://t.me/Moon2854" className="social-link" style={{"--hover-color": "#0088cc"}}>
+                  <FaTelegram />
                 </a>
-                <a href="https://linkedin.com/in/yeshigetay" className="social-link" style={{"--hover-color": "#0077b5"}}>
-                  <FaLinkedin />
+                <a href="https://www.tiktok.com/@your_tiktok_username" className="social-link" style={{"--hover-color": "#000000"}}>
+                  <FaTiktok />
                 </a>
-                <a href="https://twitter.com/yeshigetay" className="social-link" style={{"--hover-color": "#1da1f2"}}>
-                  <FaTwitter />
+                <a href="https://www.instagram.com/benjamingx54" className="social-link" style={{"--hover-color": "#e4405f"}}>
+                  <FaInstagram />
                 </a>
                 <a href="mailto:rashambachew@gmail.com" className="social-link" style={{"--hover-color": "#ea4335"}}>
                   <FaEnvelope />
